@@ -11,9 +11,18 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Bot extends TelegramLongPollingBot {
+
+//    Map<String, Integer> services = new HashMap<>("":1);
+    String [][] services = {
+        {"OpenWeather", "Работает"},
+        {"Weatherbit", "Работает"},
+        {"Gismeteo", "Не работает"}
+};
+
+
 
     public static void main(String[] args) {
         ApiContextInitializer.init();
@@ -36,8 +45,6 @@ public class Bot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public void onUpdateReceived(Update update) {
@@ -45,18 +52,27 @@ public class Bot extends TelegramLongPollingBot {
         Message message = update.getMessage();
         if (message != null && message.hasText()) {
             switch (message.getText()) {
-                case "/help":
+                case "/Помощь":
                     sendMsg(message, "Чем могу помочь?");
                     break;
-                case "/setting":
+                case "/Настройки":
                     sendMsg(message, "Что будем настраивать?");
+                    break;
+                case "/Список сервисов":
+                    sendMsg(message, getRunningServices());
                     break;
                 default:
                     try {
-                        sendMsg(message, Weather.getWeather(message.getText(), model));
+                        sendMsg(message, OpenWeather.getWeather(message.getText(), model));
                     } catch (IOException e) {
-                        sendMsg(message, "Такой город не найден");
+                        sendMsg(message, "Такой город на OpenWeather не найден");
                     }
+                    try {
+                        sendMsg(message, Weatherbit.getWeather(message.getText(), model));
+                    } catch (IOException e) {
+                        sendMsg(message, "Такой город на Weatherbit не найден");
+                    }
+
                     break;
             }
         }
@@ -71,12 +87,21 @@ public class Bot extends TelegramLongPollingBot {
 
         ArrayList<KeyboardRow> keyboardRows = new ArrayList<>();
         KeyboardRow keyboardFirstRow = new KeyboardRow();
-        keyboardFirstRow.add(new KeyboardButton("/help"));
-        keyboardFirstRow.add(new KeyboardButton("/setting"));
+        keyboardFirstRow.add(new KeyboardButton("/Помощь"));
+        keyboardFirstRow.add(new KeyboardButton("/Настройки"));
+        keyboardFirstRow.add(new KeyboardButton("/Список сервисов"));
 
         keyboardRows.add(keyboardFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboardRows);
 
+    }
+
+    public String getRunningServices(){
+        String result = "";
+        for (String[] o:services) {
+            result += o[0] + " - " + o[1] + "\n";
+        }
+        return result;
     }
 
     public String getBotUsername() {
