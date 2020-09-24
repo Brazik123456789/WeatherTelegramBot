@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f459eae4-02e1-48e0-b8b7-0c866c58626d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Weatherbit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OpenWeather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/json.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Bot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OpenWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OpenWeather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Weatherbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Weatherbit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Weather.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/OpenWeather.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/OpenWeather.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Weatherbit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Weatherbit.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

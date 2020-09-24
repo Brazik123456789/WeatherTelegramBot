@@ -20,13 +20,13 @@ public class OpenWeather {
         JSONObject main = jsonObject.getJSONObject("main");
         model.setTemp(main.getDouble("temp"));
         model.setHumidity(main.getDouble("humidity"));
-        model.setPressure(main.getInt("pressure"));
+        model.setPressure(main.getInt("pressure") * 0.750063755419211);
 
 
         return "OpenWeather: \n" +
                 "Город: " + model.getName() + "\n" +
                 "Температура " + model.getTemp() + " °С \n" +
                 "Влажность " + model.getHumidity() + " % \n" +
-                "Давление " + model.getPressure() + " мб";
+                "Давление " + String.format("%.3f",model.getPressure()) + " мм. рт. ст.";
     }
 }

@@ -3,7 +3,7 @@ public class Model {
     private String name;
     private Double temp;
     private Double humidity;
-    private int pressure;
+    private Double pressure;
 
 
     public String getName() {
@@ -30,11 +30,11 @@ public class Model {
         this.humidity = humidity;
     }
 
-    public int getPressure() {
+    public double getPressure() {
         return pressure;
     }
 
-    public void setPressure(int pressure) {
+    public void setPressure(double pressure) {
         this.pressure = pressure;
     }
 

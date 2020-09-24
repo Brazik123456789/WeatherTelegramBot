@@ -15,12 +15,11 @@ import java.util.*;
 
 public class Bot extends TelegramLongPollingBot {
 
-//    Map<String, Integer> services = new HashMap<>("":1);
     String [][] services = {
         {"OpenWeather", "Работает"},
         {"Weatherbit", "Работает"},
         {"Gismeteo", "Не работает"}
-};
+    };
 
 
 

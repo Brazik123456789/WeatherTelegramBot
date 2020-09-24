@@ -26,12 +26,12 @@ public class Weatherbit {
         model.setName(data.getString("city_name"));
         model.setTemp(data.getDouble("temp"));
         model.setHumidity(data.getDouble("rh"));
-        model.setPressure(data.getInt("pres"));
+        model.setPressure(data.getInt("pres") * 0.750063755419211);
 
         return "Weatherbit: \n" +
                 "Город: " + model.getName() + "\n" +
                 "Температура " + model.getTemp() + " °С \n" +
                 "Влажность " + model.getHumidity() + " % \n" +
-                "Давление " + model.getPressure() + " мб";
+                "Давление " + String.format("%.3f",model.getPressure()) + " мм. рт. ст.";
     }
 }
